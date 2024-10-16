@@ -14,7 +14,7 @@ Rank.init({
         allowNull: false
     },
     record: {
-        type: DataTypes.TIME,
+        type: DataTypes.CHAR,
         allowNull: false
     }
 }, {

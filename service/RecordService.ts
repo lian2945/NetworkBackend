@@ -9,6 +9,6 @@ export const RecordListService = async (size: number) => {
     return Datas.map((RankElement) => RankElement.dataValues);
 }
 
-export const RecordAddService = () => {
-    
+export const RecordAddService = async (nickname: string, time: string) => {
+    await Rank.create({nickname: nickname, record: time});
 }
