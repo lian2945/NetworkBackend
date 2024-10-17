@@ -3,9 +3,9 @@ import { RecordAddService, RecordListService } from "../service/RecordService";
 
 export const RecordAdd = async (req: Request, res: Response, next: NextFunction) => {
     try {
-        const { nickname, time } = req.body;
-        await RecordAddService(nickname, time);
-        res.status(201).json({"nickname": nickname, "time": time});
+        const { nickname, record } = req.body;
+        await RecordAddService(nickname, record);
+        res.status(201).json({"nickname": nickname, "time": record});
     }
     catch(error) {
         next(error);

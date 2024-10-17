@@ -4,7 +4,7 @@ import { CustomError } from "../middlewares/ErrorMiddleware";
 
 export const RecordListService = async (size: number) => {
     const Datas = await Rank.findAll({
-        order: [["id", "DESC"]],
+        order: [["record", "ASC"]],
         limit: size
     })
     return Datas.map((RankElement) => RankElement.dataValues);
