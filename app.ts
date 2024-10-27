@@ -3,6 +3,7 @@ import cookieParser from "cookie-parser";
 import MySQLDB from "./config/MySQLDB";
 import rankRouter from "./router/RankRouter";
 import { errorHandler } from "./middlewares/ErrorMiddleware";
+import cors from "cors";
 
 const port = 3000;
 
@@ -18,9 +19,10 @@ MySQLDB.sequelize.authenticate()
     });
 
 app.use(cookieParser());
+app.use(cors());
 app.use(express.json());
-app.use("/rank", rankRouter);
 app.use(errorHandler);
+app.use("/rank", rankRouter);
 
 app.listen(port, () => {
     console.log(`Server is opened at ${port}`)

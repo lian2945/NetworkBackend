@@ -4,7 +4,7 @@ import config from '../config/DBConfig.json';
 
 dotenv.config();
 
-const env = process.env.MySQL;
+const env = process.env.DBType;
 
 const DBConfig = config[env as keyof typeof config]
 

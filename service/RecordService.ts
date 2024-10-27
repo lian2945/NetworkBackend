@@ -21,3 +21,13 @@ export const RecordAddService = async (nickname: string, time: string) => {
         throw error;
     }
 }
+
+export const RecordRemoveService = async(id: number) => {
+    try {
+        if(!id) throw new CustomError("ID doesn't exist", 400);
+        return await Rank.destroy({where: {id: id}});
+    }
+    catch(error) {
+        throw error;
+    }
+}
